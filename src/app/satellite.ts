@@ -11,7 +11,14 @@ export class Satellite {
         this.type = type,
         this.operational = operational,
         this.launchDate = launchDate
-     }
+    }
 
-   ngOnInit() { }
+    ngOnInit() { }
+
+    shouldShowWarning() {
+        let warning:string = this.type.toLowerCase();
+        if(warning === 'space debris') {
+            return true;
+        }
+    }
 }
